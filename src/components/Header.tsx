@@ -1,7 +1,8 @@
-import React from 'react'
+import { createClient } from "@/prismicio";
+import React from "react";
 
 export default async function Header() {
-  return (
-    <header>Header</header>
-  )
+  const client = createClient();
+
+  return <header>Header</header>;
 }
