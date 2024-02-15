@@ -2,7 +2,8 @@
 
 import { ContactShadows, Environment } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import React, { Suspense } from "react";
+import gsap from "gsap";
+import React, { Suspense, useRef, useState } from "react";
 
 export default function Shapes() {
   return (
@@ -37,4 +38,8 @@ function Geometries() {
       geometry: new THREE.IcosahedronGeometry(3), // Gem
     },
   ];
+
+  const materials = [new THREE.MeshNormalMaterial()];
+
+  // pass to Geometry
 }
