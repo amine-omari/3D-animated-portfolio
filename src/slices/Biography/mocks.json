@@ -8,10 +8,16 @@
 				"value": "how",
 				"type": "Text"
 			},
-			"description": {
-				"__TYPE__": "FieldContent",
-				"value": "tide",
-				"type": "Text"
+						"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Velit fugiat consectetur et magna occaecat laboris fugiat minim anim anim duis."
+						}
+					}
+				]
 			},
 			"button_text": {
 				"__TYPE__": "FieldContent",
@@ -26,7 +32,6 @@
 				}
 			},
 			"avatar": {
-				"__TYPE__": "ImageContent",
 				"origin": {
 					"id": "main",
 					"url": "https://images.unsplash.com/photo-1589321578146-4c1ba445cc88",
@@ -44,6 +49,9 @@
 					},
 					"background": "transparent"
 				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
 				"thumbnails": {}
 			}
 		},
