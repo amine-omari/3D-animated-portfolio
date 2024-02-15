@@ -18,6 +18,7 @@ export function Shapes() {
             opacity={0.65}
             scale={40}
             blur={1}
+            far={9}
           ></ContactShadows>
         </Suspense>
       </Canvas>
