@@ -1,6 +1,6 @@
 import { Content, KeyTextField } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
 /**
  * Props for `Hero`.
@@ -12,6 +12,8 @@ export type HeroProps = SliceComponentProps<Content.HeroSlice>;
  */
 const Hero = ({ slice }: HeroProps): JSX.Element => {
   const component = useRef(null);
+
+  useEffect(() => {});
 
   const renderLetters = (name: KeyTextField, key: string) => {
     if (!name) return;
