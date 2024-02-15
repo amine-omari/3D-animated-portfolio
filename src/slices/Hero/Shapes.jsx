@@ -88,6 +88,7 @@ function Geometries() {
     <Geometry
       key={JSON.stringify(position)}
       position={position.map((p) => p * 2)}
+      soundEffects={soundEffects}
       geometry={geometry}
       materials={materials}
       r={r}
@@ -95,7 +96,7 @@ function Geometries() {
   ));
 }
 
-function Geometry({ r, position, geometry, materials }) {
+function Geometry({ r, position, geometry, materials, soundEffects }) {
   const meshRef = useRef();
   const [visible, setVisible] = useState(false);
 
@@ -107,6 +108,7 @@ function Geometry({ r, position, geometry, materials }) {
 
   function handleClick(e) {
     const mesh = e.object;
+
     gsap.to(mesh.rotation, {
       x: `+=${gsap.utils.random(0, 2)}`,
       y: `+=${gsap.utils.random(0, 2)}`,
