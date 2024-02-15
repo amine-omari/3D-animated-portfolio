@@ -41,7 +41,22 @@ function Geometries() {
     },
   ];
 
-  const materials = [new THREE.MeshNormalMaterial()];
+  const materials = [
+    new THREE.MeshNormalMaterial(),
+    new THREE.MeshStandardMaterial({ color: 0x2ecc71, roughness: 0 }),
+    new THREE.MeshStandardMaterial({ color: 0x16a085, roughness: 0.4 }),
+    new THREE.MeshStandardMaterial({ color: 0xe67e22, roughness: 0.1 }),
+    new THREE.MeshStandardMaterial({
+      color: 0x2980b9,
+      metalness: 0.5,
+      roughness: 0,
+    }),
+    new THREE.MeshStandardMaterial({
+      color: 0x2c3e50,
+      metalness: 0.5,
+      roughness: 0.1,
+    }),
+  ];
 
   return geometries.map(({ position, r, geometry }) => (
     <Geometry
