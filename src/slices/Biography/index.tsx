@@ -1,7 +1,7 @@
 import Bounded from "@/components/Bounded";
 import Heading from "@/components/Heading";
 import { Content } from "@prismicio/client";
-import { SliceComponentProps } from "@prismicio/react";
+import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 
 /**
  * Props for `Biography`.
@@ -18,9 +18,13 @@ const Biography = ({ slice }: BiographyProps): JSX.Element => {
       data-slice-variation={slice.variation}
     >
       <div className="grid gap-x-8 gap-y-6 md:grid-cols-[2fr,1fr]">
-        <Heading as="h1" size="xl" className="col-start-1">
+        <Heading size="xl" className="col-start-1">
           {slice.primary.heading}
         </Heading>
+
+        <div className="prose prose-xl prose-slate prose-invert col-start-1">
+          <PrismicRichText field={slice.primary.description} />
+        </div>
       </div>
     </Bounded>
   );
