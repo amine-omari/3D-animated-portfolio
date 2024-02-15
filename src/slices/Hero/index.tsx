@@ -15,7 +15,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <>{slice.primary.first_name}</>
+      <span className="text-red-500">{slice.primary.first_name}</span>
       <>{slice.primary.last_name}</>
       <>{slice.primary.tag_line}</>
     </section>
