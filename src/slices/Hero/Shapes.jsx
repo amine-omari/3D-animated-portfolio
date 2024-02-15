@@ -1,6 +1,7 @@
 "use client";
 
-import { ContactShadows, Environment } from "@react-three/drei";
+import * as THREE from "three";
+import { ContactShadows, Environment, Float } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import gsap from "gsap";
 import React, { Suspense, useRef, useState } from "react";
@@ -42,4 +43,36 @@ function Geometries() {
   const materials = [new THREE.MeshNormalMaterial()];
 
   // pass to Geometry
+}
+
+function Geometry({ r, position, geometry, materials }) {
+  const meshRef = useRef();
+  const [visible, setVisible] = useState(false);
+
+  const startingMaterial = getRandomMaterial();
+
+  function getRandomMaterial() {
+    return gsap.utils.random(materials);
+  }
+
+  function handleClick(e) {
+    const mesh = e.object;
+    gsap.to(mesh.rotation, {
+      x: `+=${gsap.utils.random(0, 2)}`,
+      y: `+=${gsap.utils.random(0, 2)}`,
+      z: `+=${gsap.utils.random(0, 2)}`,
+      duration: 1.3,
+      ease: "elastic.out(1,0.3)",
+      yoyo: true,
+    });
+
+    mesh.material = getRandomMaterial();
+  }
+
+  const handlePointerOver = () => {
+    document.body.style.cursor = "pointer";
+  };
+  const handlePointerOut = () => {
+    document.body.style.cursor = "default";
+  };
 }
