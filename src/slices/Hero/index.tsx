@@ -1,4 +1,4 @@
-import { Content } from "@prismicio/client";
+import { Content, KeyTextField } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 
 /**
@@ -10,6 +10,18 @@ export type HeroProps = SliceComponentProps<Content.HeroSlice>;
  * Component for "Hero" Slices.
  */
 const Hero = ({ slice }: HeroProps): JSX.Element => {
+  const renderLetters = (name: KeyTextField, key: string) => {
+    if (!name) return;
+    return name.split("").map((letter, index) => (
+      <span
+        key={index}
+        className={`name-animation name-animation-${key} inline-block opacity-0`}
+      >
+        {letter}
+      </span>
+    ));
+  };
+
   return (
     <section
       data-slice-type={slice.slice_type}
@@ -24,10 +36,10 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
             }
           >
             <span className="block text-slate-300">
-              {slice.primary.first_name}
+              {renderLetters(slice.primary.first_name, "first")}
             </span>
             <span className="-mt-[.2em] block text-slate-500">
-              {slice.primary.last_name}
+              {renderLetters(slice.primary.last_name, "last")}
             </span>
           </h1>
           <span className="block bg-gradient-to-tr from-yellow-500 via-yellow-200 to-yellow-500 bg-clip-text text-2xl font-bold uppercase tracking-[.2em] text-transparent opacity-100 md:text-4xl">
