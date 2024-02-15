@@ -2,7 +2,7 @@
 import Bounded from "@/components/Bounded";
 import { Content, KeyTextField } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
-import gsap from "gsap";
+import { gsap } from "gsap";
 import { useEffect, useRef } from "react";
 
 /**
