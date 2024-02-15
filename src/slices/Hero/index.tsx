@@ -23,7 +23,9 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
               slice.primary.first_name + " " + slice.primary.last_name
             }
           >
-            <span className="text-red-500">{slice.primary.first_name}</span>
+            <span className="block text-slate-300">
+              {slice.primary.first_name}
+            </span>
             <>{slice.primary.last_name}</>
             <>{slice.primary.tag_line}</>
           </h1>
