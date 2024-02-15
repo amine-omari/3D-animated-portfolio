@@ -44,6 +44,11 @@ function Geometries() {
       r: 0.4,
       geometry: new THREE.CapsuleGeometry(0.5, 1.6, 2, 16), // Pill
     },
+    {
+      position: [-1.4, 2, -4],
+      r: 0.6,
+      geometry: new THREE.DodecahedronGeometry(1.5), // Football
+    },
   ];
 
   const materials = [
