@@ -15,9 +15,13 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <span className="text-red-500">{slice.primary.first_name}</span>
-      <>{slice.primary.last_name}</>
-      <>{slice.primary.tag_line}</>
+      <div className="grid min-h-[70vh] grid-cols-1 md:grid-cols-2 items-center">
+        <div className="col-start-1 md:row-start-1">
+          <span className="text-red-500">{slice.primary.first_name}</span>
+          <>{slice.primary.last_name}</>
+          <>{slice.primary.tag_line}</>
+        </div>
+      </div>
     </section>
   );
 };
