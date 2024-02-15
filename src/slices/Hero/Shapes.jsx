@@ -75,4 +75,19 @@ function Geometry({ r, position, geometry, materials }) {
   const handlePointerOut = () => {
     document.body.style.cursor = "default";
   };
+
+  return (
+    <group position={position} ref={meshRef}>
+      <Float speed={5 * r} rotationIntensity={6 * r} floatIntensity={5 * r}>
+        <mesh
+          geometry={geometry}
+          onClick={handleClick}
+          onPointerOver={handlePointerOver}
+          onPointerOut={handlePointerOut}
+          visible={visible}
+          material={startingMaterial}
+        />
+      </Float>
+    </group>
+  );
 }
