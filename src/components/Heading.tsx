@@ -1,5 +1,7 @@
-import React from "react";
-
 export default function Heading() {
-  return <div>Heading</div>;
+  return (
+    <Comp>
+      <div></div>
+    </Comp>
+  );
 }
