@@ -17,6 +17,7 @@ export default function Shapes() {
         camera={{ position: [0, 0, 25], fov: 30, near: 1, far: 40 }}
       >
         <Suspense fallback={null}>
+          <Geometries />
           <ContactShadows
             position={[0, -3.5, 0]}
             opacity={0.65}
@@ -42,12 +43,20 @@ function Geometries() {
 
   const materials = [new THREE.MeshNormalMaterial()];
 
-  // pass to Geometry
+  return geometries.map(({ position, r, geometry }) => (
+    <Geometry
+      key={JSON.stringify(position)}
+      position={position.map((p) => p * 2)}
+      geometry={geometry}
+      materials={materials}
+      r={r}
+    />
+  ));
 }
 
 function Geometry({ r, position, geometry, materials }) {
   const meshRef = useRef();
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(true);
 
   const startingMaterial = getRandomMaterial();
 
