@@ -54,6 +54,11 @@ function Geometries() {
       r: 0.3,
       geometry: new THREE.TorusGeometry(0.6, 0.25, 16, 32), // Donut
     },
+    {
+      position: [1.6, 1.6, -4],
+      r: 0.7,
+      geometry: new THREE.OctahedronGeometry(1.5), // Diamond
+    },
   ];
 
   const materials = [
