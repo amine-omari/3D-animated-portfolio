@@ -1,5 +1,6 @@
+import { ContactShadows } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import React from "react";
+import React, { Suspense } from "react";
 
 export function Shapes() {
   return (
@@ -10,7 +11,9 @@ export function Shapes() {
         gl={{ antialias: false }}
         dpr={[1, 1.5]}
         camera={{ position: [0, 0, 25], fov: 30, near: 1, far: 40 }}
-      ></Canvas>
+      >
+        <Suspense fallback={null}></Suspense>
+      </Canvas>
     </div>
   );
 }
