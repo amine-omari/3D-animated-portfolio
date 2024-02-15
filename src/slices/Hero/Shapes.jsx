@@ -1,4 +1,4 @@
-import { ContactShadows } from "@react-three/drei";
+import { ContactShadows, Environment } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import React, { Suspense } from "react";
 
@@ -19,7 +19,8 @@ export function Shapes() {
             scale={40}
             blur={1}
             far={9}
-          ></ContactShadows>
+          />
+          <Environment preset="studio" />
         </Suspense>
       </Canvas>
     </div>
