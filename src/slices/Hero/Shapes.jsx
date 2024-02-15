@@ -78,6 +78,12 @@ function Geometries() {
     }),
   ];
 
+  const soundEffects = [
+    new Audio("/sounds/Knock1.ogg"),
+    new Audio("/sounds/Knock2.ogg"),
+    new Audio("/sounds/Knock3.ogg"),
+  ];
+
   return geometries.map(({ position, r, geometry }) => (
     <Geometry
       key={JSON.stringify(position)}
