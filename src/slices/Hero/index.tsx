@@ -39,7 +39,21 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
         }
       );
 
-      tl.fromTo(".job-title", {}, {});
+      tl.fromTo(
+        ".job-title",
+        {
+          y: 20,
+          opacity: 0,
+          scale: 1.2,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          scale: 1,
+          ease: "elastic.out(1,0.3)",
+        }
+      );
     }, component);
     return () => ctx.revert();
   }, []);
@@ -77,7 +91,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
               {renderLetters(slice.primary.last_name, "last")}
             </span>
           </h1>
-          <span className="job-title block bg-gradient-to-tr from-yellow-500 via-yellow-200 to-yellow-500 bg-clip-text text-2xl font-bold uppercase tracking-[.2em] text-transparent opacity-100 md:text-4xl">
+          <span className="job-title block bg-gradient-to-tr from-yellow-500 via-yellow-200 to-yellow-500 bg-clip-text text-2xl font-bold uppercase tracking-[.2em] text-transparent md:text-4xl">
             {slice.primary.tag_line}
           </span>
         </div>
