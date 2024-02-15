@@ -49,6 +49,11 @@ function Geometries() {
       r: 0.6,
       geometry: new THREE.DodecahedronGeometry(1.5), // Football
     },
+    {
+      position: [-0.8, -0.75, 5],
+      r: 0.3,
+      geometry: new THREE.TorusGeometry(0.6, 0.25, 16, 32), // Donut
+    },
   ];
 
   const materials = [
