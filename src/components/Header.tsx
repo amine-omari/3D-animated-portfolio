@@ -2,6 +2,6 @@ import React from 'react'
 
 export default async function Header() {
   return (
-    <div>Header</div>
+    <header>Header</header>
   )
 }
