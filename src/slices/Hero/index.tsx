@@ -1,3 +1,4 @@
+"use client";
 import { Content, KeyTextField } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import gsap from "gsap";
@@ -15,8 +16,24 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
   const component = useRef(null);
 
   useEffect(() => {
-    let ctx = gsap.context(() => {})
-  })
+    let ctx = gsap.context(() => {
+      const tl = gsap.timeline();
+      tl.fromTo(
+        ".name-animation",
+        {
+          x: -100,
+          opacity: 0,
+          rotate: -10,
+        },
+        {
+          x: 0,
+          opacity: 1,
+          rotate: 0,
+        }
+      );
+    }, component);
+    return () => ctx.revert();
+  }, []);
 
   const renderLetters = (name: KeyTextField, key: string) => {
     if (!name) return;
