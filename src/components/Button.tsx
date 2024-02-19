@@ -1,4 +1,5 @@
 import { KeyTextField, LinkField } from "@prismicio/client";
+import { PrismicNextLink } from "@prismicio/next";
 import React from "react";
 
 type ButtonProps = {
@@ -14,5 +15,5 @@ export default function Button({
   showcon,
   className,
 }: ButtonProps) {
-  return <div>Button</div>;
+  return <PrismicNextLink>Button</PrismicNextLink>;
 }
