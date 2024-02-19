@@ -1,5 +1,6 @@
 import { KeyTextField, LinkField } from "@prismicio/client";
 import { PrismicNextLink } from "@prismicio/next";
+import clsx from "clsx";
 import React from "react";
 
 type ButtonProps = {
@@ -15,5 +16,15 @@ export default function Button({
   showcon,
   className,
 }: ButtonProps) {
-  return <PrismicNextLink field={linkField}>Button</PrismicNextLink>;
+  return (
+    <PrismicNextLink
+      field={linkField}
+      className={clsx(
+        "group relative flex w-fit items-center justify-center overflow-hidden rounded-md border-2 border-slate-900 bg-slate-50 px-4 py-2 font-bold transition-transform ease-out hover:scale-105",
+        className
+      )}
+    >
+      Button
+    </PrismicNextLink>
+  );
 }
