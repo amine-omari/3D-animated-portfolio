@@ -7,7 +7,7 @@ type ButtonProps = {
   linkField: LinkField;
   label: KeyTextField;
   showcon?: boolean;
-  className: string;
+  className?: string;
 };
 
 export default function Button({
@@ -24,7 +24,7 @@ export default function Button({
         className
       )}
     >
-      Button
+      <span className="absolute inset-0 z-0 h-full translate-y-9 bg-yellow-300 transition-transform duration-300 ease-in-out group-hover:translate-y-0"></span>
     </PrismicNextLink>
   );
 }
