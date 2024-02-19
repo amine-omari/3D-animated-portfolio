@@ -15,5 +15,5 @@ export default function Button({
   showcon,
   className,
 }: ButtonProps) {
-  return <PrismicNextLink>Button</PrismicNextLink>;
+  return <PrismicNextLink field={linkField}>Button</PrismicNextLink>;
 }
