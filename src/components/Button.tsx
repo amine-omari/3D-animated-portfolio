@@ -6,14 +6,14 @@ import React from "react";
 type ButtonProps = {
   linkField: LinkField;
   label: KeyTextField;
-  showcon?: boolean;
+  showIcon?: boolean;
   className?: string;
 };
 
 export default function Button({
   linkField,
   label,
-  showcon,
+  showIcon,
   className,
 }: ButtonProps) {
   return (
