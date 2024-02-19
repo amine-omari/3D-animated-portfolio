@@ -1,7 +1,11 @@
-import React from 'react'
+import { ImageField } from "@prismicio/client";
+import React from "react";
 
-export default function Avatar() {
-  return (
-    <div>Avatar</div>
-  )
+type AvatarProps = {
+  image: ImageField;
+  className: string;
+};
+
+export default function Avatar({ image, className }: AvatarProps) {
+  return <div>Avatar</div>;
 }
