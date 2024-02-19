@@ -13,7 +13,7 @@ type ButtonProps = {
 export default function Button({
   linkField,
   label,
-  showIcon,
+  showIcon = true,
   className,
 }: ButtonProps) {
   return (
