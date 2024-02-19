@@ -2,7 +2,6 @@ import Bounded from "@/components/Bounded";
 import Button from "@/components/Button";
 import Heading from "@/components/Heading";
 import { Content } from "@prismicio/client";
-import { PrismicNextImage } from "@prismicio/next";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 
 /**
@@ -30,10 +29,6 @@ const Biography = ({ slice }: BiographyProps): JSX.Element => {
         <Button
           linkField={slice.primary.button_link}
           label={slice.primary.button_text}
-        />
-        <PrismicNextImage
-          field={slice.primary.avatar}
-          className="row-start-1 max-w-sm md:col-start-2 md:row-end-3"
         />
       </div>
     </Bounded>
