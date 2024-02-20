@@ -1,10 +1,12 @@
+"use client";
+
 import Bounded from "@/components/Bounded";
 import Heading from "@/components/Heading";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { MdCircle } from "react-icons/md";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -20,11 +22,14 @@ export type TechListProps = SliceComponentProps<Content.TechListSlice>;
 const TechList = ({ slice }: TechListProps): JSX.Element => {
   const component = useRef(null);
 
+  useEffect(() => {});
+
   return (
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
       className="overflow-hidden"
+      ref={component}
     >
       <Bounded as="div">
         <Heading size="lg" className="mb-8" as="h2">
