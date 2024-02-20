@@ -1,3 +1,4 @@
+import Bounded from "@/components/Bounded";
 import Heading from "@/components/Heading";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
@@ -19,9 +20,11 @@ const TechList = ({ slice }: TechListProps): JSX.Element => {
       data-slice-variation={slice.variation}
       className="overflow-hidden"
     >
-      <Heading size="lg" as="h2">
-        {slice.primary.heading}
-      </Heading>
+      <Bounded>
+        <Heading size="lg" as="h2">
+          {slice.primary.heading}
+        </Heading>
+      </Bounded>
       {slice.items.map(({ tech_color, tech_name }, index) => (
         <div
           key={index}
