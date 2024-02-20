@@ -29,6 +29,7 @@ const TechList = ({ slice }: TechListProps): JSX.Element => {
         <div
           key={index}
           className="tech-row mb-8 flex items-center justify-center gap-4 text-slate-700"
+          aria-label={tech_name || undefined}
         >
           {Array.from({ length: 15 }, (_, index) => (
             <React.Fragment key={index}>
