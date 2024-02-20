@@ -20,7 +20,7 @@ const TechList = ({ slice }: TechListProps): JSX.Element => {
       data-slice-variation={slice.variation}
       className="overflow-hidden"
     >
-      <Bounded>
+      <Bounded as="div">
         <Heading size="lg" as="h2">
           {slice.primary.heading}
         </Heading>
