@@ -22,7 +22,19 @@ export type TechListProps = SliceComponentProps<Content.TechListSlice>;
 const TechList = ({ slice }: TechListProps): JSX.Element => {
   const component = useRef(null);
 
-  useEffect(() => {});
+  useEffect(() => {
+    let ctx = gsap.context(() => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          markers: true,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 4,
+        },
+      });
+    }, component);
+    return () => ctx.revert(); // clean up
+  });
 
   return (
     <section
