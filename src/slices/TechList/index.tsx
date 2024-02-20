@@ -3,10 +3,11 @@ import Heading from "@/components/Heading";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import React from "react";
 import { MdCircle } from "react-icons/md";
 
-gsap;
+gsap.registerPlugin(ScrollTrigger);
 
 /**
  * Props for `TechList`.
