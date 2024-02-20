@@ -2,6 +2,7 @@ import Heading from "@/components/Heading";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import React from "react";
+import { MdCircle } from "react-icons/md";
 
 /**
  * Props for `TechList`.
@@ -34,6 +35,9 @@ const TechList = ({ slice }: TechListProps): JSX.Element => {
                 }}
               >
                 {tech_name}
+              </span>
+              <span>
+                <MdCircle />
               </span>
             </React.Fragment>
           ))}
