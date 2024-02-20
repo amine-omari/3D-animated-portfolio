@@ -21,7 +21,7 @@ const TechList = ({ slice }: TechListProps): JSX.Element => {
       className="overflow-hidden"
     >
       <Bounded as="div">
-        <Heading size="lg" as="h2">
+        <Heading size="lg" className="mb-8" as="h2">
           {slice.primary.heading}
         </Heading>
       </Bounded>
