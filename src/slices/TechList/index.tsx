@@ -2,8 +2,11 @@ import Bounded from "@/components/Bounded";
 import Heading from "@/components/Heading";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
+import { gsap } from "gsap";
 import React from "react";
 import { MdCircle } from "react-icons/md";
+
+gsap;
 
 /**
  * Props for `TechList`.
