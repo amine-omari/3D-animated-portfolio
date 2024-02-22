@@ -3,6 +3,7 @@ import Heading from "@/components/Heading";
 import { Content, isFilled } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import ContentList from "./ContentList";
+import { createClient } from "@/prismicio";
 
 /**
  * Props for `ContentIndex`.
@@ -13,6 +14,8 @@ export type ContentIndexProps = SliceComponentProps<Content.ContentIndexSlice>;
  * Component for "ContentIndex" Slices.
  */
 const ContentIndex = ({ slice }: ContentIndexProps): JSX.Element => {
+  const client = createClient;
+
   return (
     <Bounded
       data-slice-type={slice.slice_type}
