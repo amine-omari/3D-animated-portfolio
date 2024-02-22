@@ -1,7 +1,7 @@
 import Bounded from "@/components/Bounded";
 import Heading from "@/components/Heading";
 import { Content, isFilled } from "@prismicio/client";
-import { SliceComponentProps } from "@prismicio/react";
+import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 
 /**
  * Props for `ContentIndex`.
@@ -20,7 +20,11 @@ const ContentIndex = ({ slice }: ContentIndexProps): JSX.Element => {
       <Heading size="xl" className="mb-8">
         {slice.primary.heading}
       </Heading>
-      {isFilled.richText(slice.primary.description)}
+      {isFilled.richText(slice.primary.description) && (
+        <div>
+          <PrismicRichText field={slice.primary.description} />
+        </div>
+      )}
     </Bounded>
   );
 };
