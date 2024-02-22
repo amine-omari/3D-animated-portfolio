@@ -2,6 +2,7 @@ import Bounded from "@/components/Bounded";
 import Heading from "@/components/Heading";
 import { Content, isFilled } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+import ContentList from "./ContentList";
 
 /**
  * Props for `ContentIndex`.
@@ -25,6 +26,8 @@ const ContentIndex = ({ slice }: ContentIndexProps): JSX.Element => {
           <PrismicRichText field={slice.primary.description} />
         </div>
       )}
+
+      <ContentList />
     </Bounded>
   );
 };
