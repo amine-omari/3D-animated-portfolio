@@ -17,7 +17,9 @@ const ContentIndex = ({ slice }: ContentIndexProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <Heading>{slice.primary.heading}</Heading>
+      <Heading size="xl" className="mb-8">
+        {slice.primary.heading}
+      </Heading>
     </Bounded>
   );
 };
