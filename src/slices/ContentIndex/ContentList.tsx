@@ -1,7 +1,15 @@
-import React from 'react'
+import React from "react";
 
 export default function ContentList() {
   return (
-    <div>ContentList</div>
-  )
+    <div>
+      <ul>
+        <li>
+          <a href="">
+            <div></div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  );
 }
