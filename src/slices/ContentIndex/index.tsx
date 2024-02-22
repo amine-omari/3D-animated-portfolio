@@ -13,8 +13,12 @@ export type ContentIndexProps = SliceComponentProps<Content.ContentIndexSlice>;
 /**
  * Component for "ContentIndex" Slices.
  */
-const ContentIndex = ({ slice }: ContentIndexProps): JSX.Element => {
-  const client = createClient;
+const ContentIndex = async ({
+  slice,
+}: ContentIndexProps): Promise<JSX.Element> => {
+  const client = createClient();
+  const blogPosts = await client.getAllByType("blog_post");
+  const projects = await client.getAllByType("project");
 
   return (
     <Bounded
