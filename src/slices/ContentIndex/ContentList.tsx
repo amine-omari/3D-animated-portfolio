@@ -1,4 +1,9 @@
+import { Content } from "@prismicio/client";
 import React from "react";
+
+type ContentListProps = {
+  items: Content.BlogPostDocument[] | Content.ProjectDocument[];
+};
 
 export default function ContentList() {
   return (
