@@ -5,10 +5,15 @@ type ContentListProps = {
   items: Content.BlogPostDocument[] | Content.ProjectDocument[];
   ContentType: Content.ContentIndexSlice["primary"]["content_type"];
   fallbackItemImage: Content.ContentIndexSlice["primary"]["fallback_item_image"];
-  viewMoreText: Content.ContentIndexSlice["primary"]["view_more_text"]
+  viewMoreText: Content.ContentIndexSlice["primary"]["view_more_text"];
 };
 
-export default function ContentList() {
+export default function ContentList({
+  items,
+  ContentType,
+  fallbackItemImage,
+  viewMoreText,
+}: ContentListProps) {
   return (
     <div>
       <ul>
