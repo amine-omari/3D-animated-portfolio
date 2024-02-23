@@ -1,3 +1,5 @@
+"use client";
+
 import { Content, isFilled } from "@prismicio/client";
 import Link from "next/link";
 import React, { useRef } from "react";
@@ -21,7 +23,7 @@ export default function ContentList({
   const urlPrefixes = contentType === "Blog" ? "/Blog" : "/project";
 
   return (
-    <div>
+    <div ref={component}>
       <ul className="grid border-b border-b-slate-100">
         {items.map((item, index) => (
           <>
