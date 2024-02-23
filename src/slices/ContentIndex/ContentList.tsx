@@ -4,17 +4,18 @@ import { MdArrowOutward } from "react-icons/md";
 
 type ContentListProps = {
   items: Content.BlogPostDocument[] | Content.ProjectDocument[];
-  ContentType: Content.ContentIndexSlice["primary"]["content_type"];
+  contentType: Content.ContentIndexSlice["primary"]["content_type"];
   fallbackItemImage: Content.ContentIndexSlice["primary"]["fallback_item_image"];
   viewMoreText: Content.ContentIndexSlice["primary"]["view_more_text"];
 };
 
 export default function ContentList({
   items,
-  ContentType,
+  contentType,
   fallbackItemImage,
   viewMoreText,
 }: ContentListProps) {
+
   return (
     <div>
       <ul className="grid border-b border-b-slate-100">
