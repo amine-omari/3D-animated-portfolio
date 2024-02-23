@@ -1,5 +1,6 @@
 import { Content } from "@prismicio/client";
 import React from "react";
+import { MdArrowOutward } from "react-icons/md";
 
 type ContentListProps = {
   items: Content.BlogPostDocument[] | Content.ProjectDocument[];
@@ -32,7 +33,7 @@ export default function ContentList({
                 </div>
               </div>
               <span className="ml-auto flex items-center gap-2 font-medium text-xl md:ml-0">
-                {viewMoreText}
+                {viewMoreText} <MdArrowOutward />
               </span>
             </a>
           </li>
