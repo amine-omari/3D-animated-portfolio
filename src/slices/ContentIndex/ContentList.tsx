@@ -15,6 +15,7 @@ export default function ContentList({
   fallbackItemImage,
   viewMoreText,
 }: ContentListProps) {
+  const urlPrefixes = contentType === "Blog" ? "/Blog" : "/project";
 
   return (
     <div>
