@@ -17,11 +17,21 @@ export default function ContentList({
   return (
     <div>
       <ul>
-        <li>
-          <a href="">
-            <div></div>
-          </a>
-        </li>
+        {items.map((item, index) => (
+          <li key={index}>
+            <a href="">
+              <div>
+                <span>{item.data.title}</span>
+                <div>
+                  {item.tags.map((tag, index) => (
+                    <span key={index}>{tag}</span>
+                  ))}
+                </div>
+              </div>
+              <span>{viewMoreText}</span>
+            </a>
+          </li>
+        ))}
       </ul>
     </div>
   );
