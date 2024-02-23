@@ -38,7 +38,12 @@ const ContentIndex = async ({
         </div>
       )}
 
-      <ContentList />
+      <ContentList
+        items={items}
+        ContentType={contentType}
+        viewMoreText={slice.primary.view_more_text}
+        fallbackItemImage={slice.primary.fallback_item_image}
+      />
     </Bounded>
   );
 };
