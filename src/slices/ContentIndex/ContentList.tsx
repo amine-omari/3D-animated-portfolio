@@ -16,7 +16,7 @@ export default function ContentList({
 }: ContentListProps) {
   return (
     <div>
-      <ul>
+      <ul className="grid border-b border-b-slate-100">
         {items.map((item, index) => (
           <li key={index}>
             <a href="">
