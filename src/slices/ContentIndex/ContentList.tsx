@@ -1,6 +1,6 @@
 import { Content, isFilled } from "@prismicio/client";
 import Link from "next/link";
-import React from "react";
+import React, { useRef } from "react";
 import { MdArrowOutward } from "react-icons/md";
 
 type ContentListProps = {
@@ -16,6 +16,8 @@ export default function ContentList({
   fallbackItemImage,
   viewMoreText,
 }: ContentListProps) {
+  const component = useRef(null);
+
   const urlPrefixes = contentType === "Blog" ? "/Blog" : "/project";
 
   return (
