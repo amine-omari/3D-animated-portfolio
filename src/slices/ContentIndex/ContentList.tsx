@@ -39,6 +39,14 @@ export default function ContentList({
         if (currentItem !== null) {
           const maxY = window.scrollY + window.innerHeight - 350;
           const maxX = window.innerWidth - 250;
+
+          gsap.to(revealRef.current, {
+            x: gsap.utils.clamp(0, maxX, mousePos.x - 110),
+            y: gsap.utils.clamp(0, maxY, mousePos.y - 110),
+            rotation: speed * (mousePos.x > lastMousePos.current.x ? 1 : -1),
+            ease: "back.out(2)",
+            duration: 1.2,
+          });
         }
       });
     };
