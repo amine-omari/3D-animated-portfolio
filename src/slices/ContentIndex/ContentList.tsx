@@ -20,6 +20,8 @@ export default function ContentList({
   viewMoreText,
 }: ContentListProps) {
   const component = useRef(null);
+  const revealRef = useRef(null);
+
   const [currentItem, setCurrentItem] = useState<null | number>(null);
 
   const lastMousePos = useRef({ x: 0, y: 0 });
@@ -109,6 +111,7 @@ export default function ContentList({
           backgroundImage:
             currentItem !== null ? `url(${contentImages[currentItem]})` : "",
         }}
+        ref={revealRef}
       ></div>
     </div>
   );
