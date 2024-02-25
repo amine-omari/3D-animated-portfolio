@@ -21,6 +21,8 @@ export default function ContentList({
   const component = useRef(null);
   const [currentItem, setCurrentItem] = useState<null | number>(null);
 
+  const lastMousePos = useRef({ x: 0, y: 0 });
+
   const urlPrefixes = contentType === "Blog" ? "/Blog" : "/project";
 
   const contentImages = items.map((item) => {
