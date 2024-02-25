@@ -1,6 +1,7 @@
 "use client";
 
 import { Content, asImageSrc, isFilled } from "@prismicio/client";
+import gsap from "gsap";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 import { MdArrowOutward } from "react-icons/md";
@@ -28,6 +29,16 @@ export default function ContentList({
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       const mousePos = { x: e.clientX, y: e.clientY + window.scrollY };
+
+      // calculate speed and direction
+      const speed = Math.sqrt(Math.pow(mousePos.x - lastMousePos.current.x, 2));
+
+      let ctx = gsap.context(() => {
+        if (currentItem !== null) {
+          const maxY = window.scrollY + window.innerHeight - 350;
+          const maxX = window.innerWidth - 250;
+        }
+      });
     };
   });
 
