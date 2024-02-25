@@ -2,7 +2,7 @@
 
 import { Content, asImageSrc, isFilled } from "@prismicio/client";
 import Link from "next/link";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { MdArrowOutward } from "react-icons/md";
 
 type ContentListProps = {
@@ -24,6 +24,12 @@ export default function ContentList({
   const lastMousePos = useRef({ x: 0, y: 0 });
 
   const urlPrefixes = contentType === "Blog" ? "/Blog" : "/project";
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      const mousePos = { x: e.clientX, y: e.clientY + window.scrollY };
+    };
+  });
 
   const contentImages = items.map((item) => {
     const image = isFilled.image(item.data.hover_image)
