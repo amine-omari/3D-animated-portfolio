@@ -46,6 +46,7 @@ export default function ContentList({
             rotation: speed * (mousePos.x > lastMousePos.current.x ? 1 : -1),
             ease: "back.out(2)",
             duration: 1.2,
+            opacity: 1,
           });
         }
         lastMousePos.current = mousePos;
@@ -122,7 +123,7 @@ export default function ContentList({
 
       {/* Hover Element */}
       <div
-        className="hover-reveal pointer-events-none absolute left-0 top-0 -z-10 h-[320px] w-[220px] rounded-lg bg-cover bg-center opacity-0f transition-[background] duration-300"
+        className="hover-reveal pointer-events-none absolute left-0 top-0 -z-10 h-[320px] w-[220px] rounded-lg bg-cover bg-center opacity-0 transition-[background] duration-300"
         style={{
           backgroundImage:
             currentItem !== null ? `url(${contentImages[currentItem]})` : "",
