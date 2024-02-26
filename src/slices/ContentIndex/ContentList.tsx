@@ -1,7 +1,7 @@
 "use client";
 
 import { Content, asImageSrc, isFilled } from "@prismicio/client";
-import gsap from "gsap";
+import { gsap } from "gsap";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 import { MdArrowOutward } from "react-icons/md";
