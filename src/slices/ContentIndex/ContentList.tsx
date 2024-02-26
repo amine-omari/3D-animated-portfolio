@@ -48,9 +48,17 @@ export default function ContentList({
             duration: 1.2,
           });
         }
-      });
+        lastMousePos.current = mousePos;
+        return () => ctx.revert();
+      }, component);
     };
-  });
+
+    window.addEventListener("mousemove", handleMouseMove);
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, [currentItem]);
 
   const contentImages = items.map((item) => {
     const image = isFilled.image(item.data.hover_image)
