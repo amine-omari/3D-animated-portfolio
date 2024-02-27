@@ -29,6 +29,10 @@ export default function ContentList({
   const urlPrefixes = contentType === "Blog" ? "/Blog" : "/project";
 
   useEffect(() => {
+    let ctx = gsap.context(() => {})
+  })
+
+  useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       const mousePos = { x: e.clientX, y: e.clientY + window.scrollY };
 
