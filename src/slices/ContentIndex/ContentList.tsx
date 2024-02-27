@@ -2,9 +2,12 @@
 
 import { Content, asImageSrc, isFilled } from "@prismicio/client";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 import { MdArrowOutward } from "react-icons/md";
+
+gsap.registerPlugin(ScrollTrigger);
 
 type ContentListProps = {
   items: Content.BlogPostDocument[] | Content.ProjectDocument[];
@@ -30,7 +33,19 @@ export default function ContentList({
 
   useEffect(() => {
     let ctx = gsap.context(() => {
-      itemsRef;
+      itemsRef.current.forEach((item) => {
+        gsap.fromTo(
+          item,
+          { opacity: 0, y: 20 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1.3,
+            ease: "elastic.out(1,0.3)",
+            stagger: 0.2,
+          }
+        );
+      });
     });
   });
 
