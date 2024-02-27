@@ -21,7 +21,7 @@ export default function ContentList({
 }: ContentListProps) {
   const component = useRef(null);
   const revealRef = useRef(null);
-  const itemsRef = useRef(null);
+  const itemsRef = useRef<Array<HTMLLIElement | null>>([]);
   const [currentItem, setCurrentItem] = useState<null | number>(null);
 
   const lastMousePos = useRef({ x: 0, y: 0 });
@@ -29,7 +29,9 @@ export default function ContentList({
   const urlPrefixes = contentType === "Blog" ? "/Blog" : "/project";
 
   useEffect(() => {
-    let ctx = gsap.context(() => {});
+    let ctx = gsap.context(() => {
+      itemsRef;
+    });
   });
 
   useEffect(() => {
@@ -107,6 +109,7 @@ export default function ContentList({
                   key={index}
                   onMouseEnter={() => onMouseEnter(index)}
                   className="list-item opacity-0f"
+                  ref={(el) => (itemsRef.current[index] = el)}
                 >
                   <Link
                     href={urlPrefixes + "/" + item.uid}
