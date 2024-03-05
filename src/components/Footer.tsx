@@ -6,6 +6,7 @@ import Link from "next/link";
 import Bounded from "@/components/Bounded";
 import Github from "@/icons/Github";
 import Twitter from "@/icons/Twitter";
+import Linkedin from "@/icons/Linkedin";
 
 export default async function Footer() {
   const client = createClient();
@@ -64,6 +65,7 @@ export default async function Footer() {
             <Twitter />
           </Link>
           <Link href="/">
+            <Linkedin />
           </Link>
         </div>
       </div>
