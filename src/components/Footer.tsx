@@ -4,8 +4,6 @@ import { createClient } from "@/prismicio";
 import { PrismicNextLink } from "@prismicio/next";
 import Link from "next/link";
 import Bounded from "@/components/Bounded";
-import { isFilled } from "@prismicio/client";
-import { FaGithub, FaTwitter, FaLinkedin } from "react-icons/fa6";
 
 export default async function Footer() {
   const client = createClient();
@@ -57,33 +55,9 @@ export default async function Footer() {
           </ul>
         </nav>
         <div className="socials inline-flex justify-center sm:justify-end">
-          {isFilled.link(settings.data.github_link) && (
-            <PrismicNextLink
-              field={settings.data.github_link}
-              className="p-2 text-2xl text-slate-300 transition-all duration-150 hover:scale-125 hover:text-yellow-400"
-              aria-label={settings.data.name + " on GitHub"}
-            >
-              <FaGithub />
-            </PrismicNextLink>
-          )}
-          {isFilled.link(settings.data.twitter_link) && (
-            <PrismicNextLink
-              field={settings.data.twitter_link}
-              className="p-2 text-2xl text-slate-300 transition-all duration-150 hover:scale-125 hover:text-yellow-400"
-              aria-label={settings.data.name + " on Twitter"}
-            >
-              <FaTwitter />
-            </PrismicNextLink>
-          )}
-          {isFilled.link(settings.data.linkedin_link) && (
-            <PrismicNextLink
-              field={settings.data.linkedin_link}
-              className="p-2 text-2xl text-slate-300 transition-all duration-150 hover:scale-125 hover:text-yellow-400"
-              aria-label={settings.data.name + " on LinkedIn"}
-            >
-              <FaLinkedin />
-            </PrismicNextLink>
-          )}
+          <Link href="/">github</Link>
+          <Link href="/">twitter</Link>
+          <Link href="/">linked in</Link>
         </div>
       </div>
     </Bounded>
