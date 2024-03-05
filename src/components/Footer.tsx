@@ -5,6 +5,7 @@ import { PrismicNextLink } from "@prismicio/next";
 import Link from "next/link";
 import Bounded from "@/components/Bounded";
 import Github from "@/icons/Github";
+import Twitter from "@/icons/Twitter";
 
 export default async function Footer() {
   const client = createClient();
@@ -60,6 +61,7 @@ export default async function Footer() {
             <Github />
           </Link>
           <Link href="/">
+            <Twitter />
           </Link>
           <Link href="/">
           </Link>
