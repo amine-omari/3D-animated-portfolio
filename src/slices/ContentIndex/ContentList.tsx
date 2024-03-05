@@ -51,8 +51,9 @@ export default function ContentList({
           }
         );
       });
-    });
-  });
+      return () => ctx.revert();
+    }, component);
+  }, []);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
