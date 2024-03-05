@@ -4,6 +4,7 @@ import { createClient } from "@/prismicio";
 import { PrismicNextLink } from "@prismicio/next";
 import Link from "next/link";
 import Bounded from "@/components/Bounded";
+import Github from "@/icons/Github";
 
 export default async function Footer() {
   const client = createClient();
@@ -55,9 +56,13 @@ export default async function Footer() {
           </ul>
         </nav>
         <div className="socials inline-flex justify-center sm:justify-end">
-          <Link href="/">github</Link>
-          <Link href="/">twitter</Link>
-          <Link href="/">linked in</Link>
+          <Link href="/">
+            <Github />
+          </Link>
+          <Link href="/">
+          </Link>
+          <Link href="/">
+          </Link>
         </div>
       </div>
     </Bounded>
