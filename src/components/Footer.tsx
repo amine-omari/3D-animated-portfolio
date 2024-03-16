@@ -9,6 +9,21 @@ import Twitter from "@/icons/Twitter";
 import Linkedin from "@/icons/Linkedin";
 
 export default async function Footer() {
+  const iconsLinks = [
+    {
+      id: 0,
+      icon: <Github />,
+    },
+    {
+      id: 1,
+      icon: <Twitter />,
+    },
+    {
+      id: 2,
+      icon: <Linkedin />,
+    },
+  ];
+
   const client = createClient();
   const settings = await client.getSingle("settings");
   return (
@@ -58,11 +73,11 @@ export default async function Footer() {
           </ul>
         </nav>
         <div className="socials inline-flex justify-center sm:justify-end space-x-4">
-          {[<Github />, <Twitter />, <Linkedin />].map((icon, index) => (
+          {iconsLinks.map(({ id, icon }) => (
             <Link
-              key={index}
+              key={id}
               href="/"
-              className={`${index === 2 ? "text-blue-600/80 hover:text-blue-600" : "text-white/80 hover:text-white"} hover:scale-110 duration-150`}
+              className={`${id === 2 ? "text-blue-600/80 hover:text-blue-600" : "text-white/80 hover:text-white"} hover:scale-110 duration-150`}
             >
               {icon}
             </Link>
