@@ -13,14 +13,17 @@ export default async function Footer() {
     {
       id: 0,
       icon: <Github />,
+      link: "https://github.com/amine-omari",
     },
     {
       id: 1,
       icon: <Twitter />,
+      link: "https://twitter.com/Amine0mari",
     },
     {
       id: 2,
       icon: <Linkedin />,
+      link: "https://www.linkedin.com/in/amine-omari-5437642a5/",
     },
   ];
 
@@ -73,10 +76,10 @@ export default async function Footer() {
           </ul>
         </nav>
         <div className="socials inline-flex justify-center sm:justify-end space-x-4">
-          {iconsLinks.map(({ id, icon }) => (
+          {iconsLinks.map(({ id, icon, link }) => (
             <Link
               key={id}
-              href="/"
+              href={link}
               className={`${id === 2 ? "text-blue-600/80 hover:text-blue-600" : "text-white/80 hover:text-white"} hover:scale-110 duration-150`}
             >
               {icon}
