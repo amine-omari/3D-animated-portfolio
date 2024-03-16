@@ -57,16 +57,16 @@ export default async function Footer() {
             ))}
           </ul>
         </nav>
-        <div className="socials inline-flex justify-center sm:justify-end">
-          <Link href="/">
-            <Github />
-          </Link>
-          <Link href="/">
-            <Twitter />
-          </Link>
-          <Link href="/">
-            <Linkedin />
-          </Link>
+        <div className="socials inline-flex justify-center sm:justify-end space-x-4">
+          {[<Github />, <Twitter />, <Linkedin />].map((icon, index) => (
+            <Link
+              key={index}
+              href="/"
+              className={`${index === 2 ? "text-blue-600/80 hover:text-blue-600" : "text-white/80 hover:text-white"} hover:scale-110 duration-150`}
+            >
+              {icon}
+            </Link>
+          ))}
         </div>
       </div>
     </Bounded>
