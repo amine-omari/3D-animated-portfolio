@@ -34,6 +34,7 @@ export default function RootLayout({
         {/* End Google Tag Manager */}
       </Head>
       <body className={clsx(urbanist.className, "min-h-screen relative")}>
+        {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-KNXGH33K"
@@ -42,6 +43,7 @@ export default function RootLayout({
             style={{ display: "none", visibility: "hidden" }}
           ></iframe>
         </noscript>
+        {/* End Google Tag Manager (noscript) */}
         <Header />
         {children}
         <Footer />
